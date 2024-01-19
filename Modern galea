@@ -1,0 +1,36 @@
+#include <16f886.h>
+
+#fuses INTRC_IO, NOWDT, NOPUT, NOBROWNOUT, 
+
+NOMCLR, NOPROTECT
+
+#device adc=10
+
+#use delay(clock=4M)
+
+void main()
+
+{
+
+while(1)
+
+{
+
+if(input(pin_c3)==1)
+
+{
+
+output_high(pin_c1);
+
+delay_ms(3000);
+
+}
+
+else
+
+{
+
+output_low(pin_c1);
+
+delay_ms(200);
+}
